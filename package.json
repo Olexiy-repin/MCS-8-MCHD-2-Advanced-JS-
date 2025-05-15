@@ -1,0 +1,25 @@
+{
+  "name": "mcs-8-mchd-2-advanced-js-",
+  "version": "1.0.0",
+  "description": "1. Розберемо:",
+  "main": "index.js",
+  "scripts": {
+    "minifycss": "npx postcss src/css/styles.css > src/css/styles.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olexiy-repin/MCS-8-MCHD-2-Advanced-JS-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olexiy-repin/MCS-8-MCHD-2-Advanced-JS-/issues"
+  },
+  "homepage": "https://github.com/Olexiy-repin/MCS-8-MCHD-2-Advanced-JS-#readme",
+  "dependencies": {
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1"
+  }
+}
