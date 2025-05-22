@@ -30,3 +30,32 @@
 // fetchUserByName('Ida', handleSuccessFetch, handleErrorFetch);
 
 //TODO: Запит за користувачем на промісах
+// const fetchUserByName = name => {
+//   return new Promise((resolve, reject) => {
+//     console.log('Робимо запит на сервер...');
+
+//     setTimeout(() => {
+//       const isSuccess = Math.random() > 0.5;
+
+//       if (isSuccess) {
+//         const user = {
+//           firstName: name,
+//           lastName: 'Francis',
+//           age: 30,
+//         };
+
+//         resolve(user);
+//       } else {
+//         reject(`Користувача ${name} не знайдено`);
+//       }
+//     }, 2000);
+//   });
+// };
+
+// fetchUserByName('Ida')
+//   .then(result => {
+//     console.log(result);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
