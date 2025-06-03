@@ -5,15 +5,21 @@
  * Використовуємо сервіс https://mockapi.io/ для бекенду
  */
 
+// import axios from 'axios';
+
 /*
  * Read (GET)
  */
 
-// const getBooks = () => {};
+// const getBooks = () => {
+//   return axios.get('https://68388def2c55e01d184db28c.mockapi.io/books');
+// };
 
 // getBooks()
 //   .then(response => {
 //     console.log(response);
+
+//     console.log(response.data);
 //   })
 //   .catch(err => {
 //     console.log(err);
@@ -23,7 +29,9 @@
  * Create (POST)
  */
 
-// const addBook = newBook => {};
+// const addBook = newBook => {
+//   return axios.post('https://68388def2c55e01d184db28c.mockapi.io/books', newBook);
+// };
 
 // addBook({
 //   title: 'Друга тестова книга з CSS',
@@ -55,7 +63,9 @@
  * Update (PUT/PATCH)
  */
 
-// const updateBookById = (dataForUpdate, bookId) => {};
+// const updateBookById = (dataForUpdate, bookId) => {
+//   return axios.put(`https://68388def2c55e01d184db28c.mockapi.io/books/${bookId}`, dataForUpdate);
+// };
 
 // updateBookById({ title: 'Велика нова книга по NODEJS' }, 10)
 //   .then(response => {
@@ -77,9 +87,11 @@
  * Delete (DELETE)
  */
 
-// const removeBook = bookId => {};
+// const removeBook = bookId => {
+//   return axios.delete(`https://68388def2c55e01d184db28c.mockapi.io/books/${bookId}`);
+// };
 
-// removeBook(11)
+// removeBook(12)
 //   .then(response => {
 //     console.log(response);
 //   })

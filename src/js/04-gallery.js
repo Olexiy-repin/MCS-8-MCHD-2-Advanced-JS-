@@ -8,37 +8,34 @@ const refs = {
   loader: document.querySelector('.js-loader'),
 };
 
-const onSearchFormSubmit = event => {
-  event.preventDefault();
+const onSearchFormSubmit = async event => {
+  try {
+    event.preventDefault();
 
-  const { target: searchForm } = event;
+    const { target: searchForm } = event;
 
-  const searchedQuery = searchForm.elements.user_query.value;
+    const searchedQuery = searchForm.elements.user_query.value;
 
-  refs.loader.classList.add('active');
+    refs.loader.classList.add('active');
 
-  refs.gallery.innerHTML = '';
+    refs.gallery.innerHTML = '';
 
-  fetchPhotosByQuery(searchedQuery)
-    .finally(() => {
-      refs.loader.classList.remove('active');
-    })
-    .then(data => {
-      if (data.total === 0) {
-        alert(`Зображень по ключовому слову ${searchedQuery} не знайдено`);
+    const { data } = await fetchPhotosByQuery(searchedQuery);
 
-        refs.gallery.innerHTML = '';
+    if (data.total === 0) {
+      alert(`Зображень по ключовому слову ${searchedQuery} не знайдено`);
 
-        return;
-      }
+      refs.gallery.innerHTML = '';
 
-      const galleryCardsTemplate = data.results.map(pictureInfo => createGalleryCardTemplate(pictureInfo)).join('');
+      return;
+    }
 
-      refs.gallery.innerHTML = galleryCardsTemplate;
-    })
-    .catch(err => {
-      console.log(err);
-    });
+    const galleryCardsTemplate = data.results.map(pictureInfo => createGalleryCardTemplate(pictureInfo)).join('');
+
+    refs.gallery.innerHTML = galleryCardsTemplate;
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 refs.searchForm.addEventListener('submit', onSearchFormSubmit);

@@ -8,3 +8,17 @@
  * - Ловить лише помилки в синхронному коді
  * - Як зловити помилку в асинхронному коді
  */
+
+// console.log('Start');
+
+// setTimeout(() => {
+//   try {
+//     const user = {};
+
+//     user = '';
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }, 1000);
+
+// console.log('End');
