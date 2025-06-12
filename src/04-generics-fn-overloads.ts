@@ -1,0 +1,95 @@
+/*
+ * Function overloads
+ * Generics
+ */
+
+//* Function overloads
+// function sum(a, b) {}
+
+// const result1 = sum(10.4, 20);
+// const result2 = sum('20', '30');
+// const result3 = sum(10.4, '20');
+// const result4 = sum(2, '30');
+
+// console.log(result1); // 30.4
+// console.log(result2); // '2030'
+// console.log(result3); // 30.4
+// console.log(result4); // '2030'
+
+//* Generics
+/*
+TODO: Реалізуйте дженерик last(items), який повертає останній елемент масиву.
+*/
+// function last(items) {}
+
+// const result1 = last([3, 2]);
+// const result2 = last(['hello', 'world']);
+
+// console.log(result1); // 2
+// console.log(result2); // world
+
+//* Generics Type
+/*
+TODO: Реалізуйте тип MyArr, який буде описувати обʼєкт із властивістю items та методом forEach.
+TODO:
+TODO: У властивості items буде зберігатися масив, це може бути, як масив рядків, так і масив чисел.
+TODO: Метод forEach, має працювати, як Array.prototype.forEach. 
+*/
+// const myArrStrings: MyArr<string> = {
+//   items: ['hello', 'world', '!'],
+
+//   forEach(callback) {
+//     for (let i = 0; i < this.items.length; i++) {
+//       callback(this.items[i], i, this.items);
+//     }
+//   },
+// };
+
+// console.log(myArrStrings.items);
+
+// const myArrNumbers: MyArr<number> = {
+//   items: [1, 2, 3],
+
+//   forEach(callback) {
+//     for (let i = 0; i < this.items.length; i++) {
+//       callback(this.items[i], i, this.items);
+//     }
+//   },
+// };
+
+// console.log(myArrNumbers.items);
+
+//* Generics, multiple parameters types
+/*
+TODO: Реалізуйте функцію updateData(data, dataForUpdate), яка буде оновлюваті данні.
+*/
+
+// function updateData<T extends object>(data: T, dataForUpdate: Partial<T>): T {
+//   return {
+//     ...data,
+//     ...dataForUpdate,
+//   };
+// }
+
+// const result1 = updateData(
+//   {
+//     firstName: 'Lizzie',
+//     lastName: 'Ortega',
+//     email: 'sijev@ve.ro',
+//     phone_number: '(369) 669-2267',
+//   },
+//   { email: 'paiw@azoehiisi.bw' }
+// );
+
+// console.log(result1);
+
+// const result2 = updateData(
+//   {
+//     title: 'HTML',
+//     description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, earum?',
+//     rating: 9,
+//   },
+//   { rating: 10 }
+// );
+
+// console.log(result2);
