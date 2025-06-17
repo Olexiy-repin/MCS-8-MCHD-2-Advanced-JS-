@@ -7,9 +7,9 @@
  */
 
 //* Return Type
-// function sum(a: number, b: number) {
+// const sum = (a: number, b: number): number => {
 //   return a + b;
-// }
+// };
 
 // const result = sum(10, 20);
 
@@ -44,19 +44,21 @@ TODO: а повертати буде масив із назвами книг.
 //   },
 // ];
 
-// const getBooksTitles = function (books: Book[]) {};
+// function getBooksTitles(books: Book[]): string[] {
+//   return books.map(book => book.title);
+// }
 
 // console.log(getBooksTitles(books));
 
 //* Void
-// function greet(firstName: string, lastName: string) {
+// function greet(firstName: string, lastName: string): void {
 //   console.log(`Welcome ${firstName} ${lastName}`);
 // }
 
 // greet('Jorge', 'Moran');
 
 //* Never
-// function generateError(message: string) {
+// function generateError(message: string): never {
 //   throw new Error(message);
 // }
 
@@ -67,21 +69,18 @@ TODO: а повертати буде масив із назвами книг.
 // }
 
 //* Function Type
-// function numbersMap(items, cb) {
-//   const newArr = [];
+// type GreetCb = (a: string, b: string) => void;
 
-//   for (const item of items) {
-//     newArr.push(cb(item));
-//   }
+// function greet(cb: GreetCb): void {
+//   const firstName: string = prompt('Your first name') || 'Anonymus';
+//   const lastName: string = prompt('Your last name') || 'Anonymus';
 
-//   return newArr;
+//   cb(firstName, lastName);
 // }
 
-// const result = numbersMap([1, 2, 3, 4], el => {
-//   return el * 2;
+// greet((firstName, lastName) => {
+//   console.log(`Hello ${firstName} ${lastName}`);
 // });
-
-// console.log(result);
 
 //* Optional parameters
 /*
@@ -92,3 +91,17 @@ TODO:   - Якщо 2 аргументи, 'Welcome {{firstName}} {{lastName}}'
 TODO:   - Якщо 1 аргумент, 'Welcome {{firstName}}'
 TODO:   - Якщо без аргументів, 'Welcome anonymus'
 */
+
+// function greetUser(firstName?: string | undefined, lastName?: string | undefined): void {
+//   if (lastName !== undefined) {
+//     console.log(`Welcome ${firstName} ${lastName}`);
+//   } else if (firstName !== undefined) {
+//     console.log(`Welcome ${firstName}`);
+//   } else {
+//     console.log('Welcome Anonumys');
+//   }
+// }
+
+// greetUser('Oleksii', 'Repin');
+// greetUser('Oleksii');
+// greetUser();
